@@ -1,8 +1,9 @@
 module.exports = {
+    disableHostCheck: true,
     devServer: {
       proxy: {
         '^/api': {
-          target: 'http://localhost:3070',
+          target: process.env.API_HOST + ':3070',
           changeOrigin: true
         },
       }
